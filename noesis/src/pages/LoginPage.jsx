@@ -13,9 +13,8 @@ const LoginPage = () => {
     e.preventDefault();
     try{
       const token = await loginService(login, password);
-      console.log(token)
       localStorage.setItem('token', token.access_token);
-      navigate('/');
+      navigate('/dashboard');
     } catch(err){
       setError('Nieprawidłowy login lub hasło.');
     }
