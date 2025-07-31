@@ -1,14 +1,3 @@
-# Noesis - rozwój
-
-**Zainstaluj zależności:**
-```bash
-npm install
-```
-**Uruchom projekt w trybie deweloperskim:**
-```bash
-npm run dev
-```
-
 # 🗺️ Roadmapa Rozwoju Aplikacji Noesis
 
 ---
@@ -27,8 +16,8 @@ npm run dev
 
 | Funkcja                        | Opis                                                                 | Status |
 |--------------------------------|----------------------------------------------------------------------|--------|
-| Formularz logowania            | Pola login + hasło, walidacja, komunikaty błędów                     | ❌     |
-| Obsługa sesji (JWT)            | Przechowywanie tokena, context użytkownika                           | ❌     |
+| Formularz logowania            | Pola login + hasło, walidacja, komunikaty błędów                     | ✅     |
+| Obsługa sesji (JWT)            | Przechowywanie tokena, context użytkownika                           | ✅     |
 | Ochrona tras (route guards)    | Przekierowanie niezalogowanych użytkowników                          | ❌     |
 | Obsługa ról (lekarz/badacz)    | Filtrowanie UI na podstawie roli                                     | ❌     |
 
