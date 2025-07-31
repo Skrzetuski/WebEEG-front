@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { login as loginService } from '../services/auth';
 
 const LoginPage = () => {
   const [login, setLogin] = useState('');
@@ -10,12 +11,12 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // TODO: Wywołanie prawdziwego API logowania
-    if (login === 'admin' && password === 'admin') {
-      localStorage.setItem('token', 'dummy-token');
+    try{
+      const token = await loginService(login, password);
+      console.log(token)
+      localStorage.setItem('token', token.access_token);
       navigate('/');
-    } else {
+    } catch(err){
       setError('Nieprawidłowy login lub hasło.');
     }
   };
