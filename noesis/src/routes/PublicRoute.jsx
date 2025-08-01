@@ -1,8 +1,14 @@
 import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import Loader from '../components/ui/Loader';
 
 const PublicRoute = () => {
-  const token = localStorage.getItem('token');
-  return token ? <Navigate to="/dashboard" /> : <Outlet />;
+  const { user, loading } = useAuth();
+
+  if (loading) return <Loader message="Weryfikuję sesję użytkownika..." />;
+  if (user) return <Navigate to="/dashboard" />;
+
+  return <Outlet />;
 };
 
 export default PublicRoute;

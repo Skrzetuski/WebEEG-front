@@ -11,10 +11,19 @@ export const login = async (login, password) => {
 
 export const getCurrentUser = async () => {
   const token = localStorage.getItem('token');
-  const response = await API.get('/me', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  return response.data;
+  if (!token) return null;
+  try {
+    const response = await API.get('/me', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (err) {
+    const status = err?.response?.status;
+    if (status === 401 || status === 403) {
+      localStorage.removeItem('token');
+    }
+    return null;
+  }
 };

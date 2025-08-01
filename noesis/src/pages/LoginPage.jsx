@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login as loginService } from '../services/auth';
+import { useAuth } from '../hooks/useAuth';
+import { getCurrentUser } from '../services/auth';
 
 const LoginPage = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const { setUser } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -14,6 +16,8 @@ const LoginPage = () => {
     try{
       const token = await loginService(login, password);
       localStorage.setItem('token', token.access_token);
+      const currentUser = await getCurrentUser();
+      setUser(currentUser);
       navigate('/dashboard');
     } catch(err){
       setError('Nieprawidłowy login lub hasło.');
