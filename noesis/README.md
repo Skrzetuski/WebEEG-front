@@ -18,7 +18,7 @@
 |--------------------------------|----------------------------------------------------------------------|--------|
 | Formularz logowania            | Pola login + hasło, walidacja, komunikaty błędów                     | ✅     |
 | Obsługa sesji (JWT)            | Przechowywanie tokena, context użytkownika                           | ✅     |
-| Ochrona tras (route guards)    | Przekierowanie niezalogowanych użytkowników                          | ❌     |
+| Ochrona tras (route guards)    | Przekierowanie niezalogowanych użytkowników                          | ✅     |
 | Obsługa ról (lekarz/badacz)    | Filtrowanie UI na podstawie roli                                     | ❌     |
 
 ---
