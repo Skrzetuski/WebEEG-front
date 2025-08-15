@@ -7,8 +7,8 @@
 | Funkcja                              | Opis                                                                 | Status |
 |--------------------------------------|----------------------------------------------------------------------|--------|
 | Inicjalizacja projektu               | Utworzenie projektu, konfiguracja                                    | ✅     |
-| Routing widoków                      | Konfiguracja tras dla paneli: logowanie, EEG, kreator, tagowanie     | ❌     |
-| Layout i nawigacja                   | Nagłówek, sidebar, routing dynamiczny, responsywność                 | ❌     |
+| Routing widoków                      | Konfiguracja tras dla paneli: logowanie, EEG, kreator, tagowanie     | ✅     |
+| Layout i nawigacja                   | Nagłówek, sidebar, routing dynamiczny, responsywność                 | ⚠️     |
 
 ---
 
