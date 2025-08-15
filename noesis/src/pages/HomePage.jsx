@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
       <h1 className="text-3xl font-bold text-center mb-6">
-        System Neosis
+        System Noesis
       </h1>
       <p className="text-lg text-gray-600 text-center mb-8 max-w-xl">
         System wspierający analizę sygnałów EEG w czasie rzeczywistym oraz prowadzenie badań z użyciem sztucznej inteligencji.
